@@ -22,16 +22,13 @@ public class ProductApp {
             String productCode = sc.nextLine();  // read the product code
 
             // Book or a Software Object? = ProductDB.getProduct(productCode);
-            Product myProduct = ProductDB.getProduct(productCode);
+            Product p = ProductDB.getProduct(productCode);
 
             // display the output
             System.out.println();
-            if (myProduct != null) {
-                System.out.println("Description: " + myProduct.toString());
-                System.out.println("Price:       " + myProduct.getPriceFormatted());
-
-
-
+            if (p != null) {
+                System.out.println("Description: " + p.toString());
+                System.out.println("Price:       " + p.getPriceFormatted());
             } else {
                 System.out.println("No product matches this product code.");
             }
