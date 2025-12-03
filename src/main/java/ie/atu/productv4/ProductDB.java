@@ -7,6 +7,8 @@ public class ProductDB {
     Product myProduct = null;
     Software mySoftware = null;
     Book myBook = null;
+    TV myTV = null;
+    Music myMusic = null;
         if (productCode.equalsIgnoreCase("studios")) {
             mySoftware = new Software();
             mySoftware.setCode(productCode);
@@ -49,6 +51,42 @@ public class ProductDB {
             myBook.setPrice(54.50);
             myBook.setAuthor("Jim Lennon");
             myProduct= myBook;
+        }
+        else if (productCode.equalsIgnoreCase("Bravia")) {
+            myTV = new TV();
+            myTV.setCode(productCode);
+            myTV.setDescription("Sony Bravia TV");
+            myTV.setPrice(945);
+            myTV.setManufacturer("Sony");
+            myTV.setScreenSize("44 inch");
+            myProduct= myTV;
+        }
+        else if (productCode.equalsIgnoreCase("monitor")) {
+            myTV = new TV();
+            myTV.setCode(productCode);
+            myTV.setDescription("Dell PC monitor");
+            myTV.setPrice(240);
+            myTV.setManufacturer("Dell");
+            myTV.setScreenSize("12 inch");
+            myProduct = myTV;
+        }
+        else if (productCode.equalsIgnoreCase("PINK")) {
+            myMusic = new Music();
+            myMusic.setCode(productCode);
+            myMusic.setDescription("Wish you were here");
+            myMusic.setPrice(5);
+            myMusic.setArtist("Pink Floyd");
+            myMusic.setLabel("Columbia Group");
+            myProduct = myMusic;
+        }
+        else if (productCode.equalsIgnoreCase("Jackals")) {
+            myMusic = new Music();
+            myMusic.setCode(productCode);
+            myMusic.setDescription("Jackals cant be bothered to dream");
+            myMusic.setPrice(5);
+            myMusic.setArtist("Refused");
+            myMusic.setLabel("Epitaph Records");
+            myProduct = myMusic;
         }
         return  myProduct;
     }
