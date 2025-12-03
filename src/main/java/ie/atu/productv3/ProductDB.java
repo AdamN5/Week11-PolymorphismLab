@@ -1,53 +1,55 @@
 package ie.atu.productv3;
 
-import ie.atu.productv2.Book;
-import ie.atu.productv2.Software;
-
-public class ProductDB  extends Software {
+public class ProductDB {
 
     public static Product getProduct(String productCode) {
-    // In a more realistic application, this code would get the data for the product from a file or database
-    // For now, this code just uses if/else statements to return the correct product data
-    Product myProduct = null;
 
+    Product myProduct = null;
+    Software mySoftware = null;
+    Book myBook = null;
         if (productCode.equalsIgnoreCase("studios")) {
-            myProduct = new ie.atu.productv3.Software();
-            myProduct.setCode(productCode);
-            myProduct.setDescription("Visual Studios");
-            myProduct.setPrice(57.50);
-            myProduct.setVersion("Microsoft 1.1");
+            mySoftware = new Software();
+            mySoftware.setCode(productCode);
+            mySoftware.setDescription("Visual Studios");
+            mySoftware.setPrice(57.50);
+            mySoftware.setVersion("Microsoft 1.1");
+            myProduct= mySoftware;
         } else if (productCode.equalsIgnoreCase("eclipse")) {
-            myProduct = new ie.atu.productv3.Software();
-            myProduct.setCode(productCode);
-            myProduct.setDescription("Build Java apps");
-            myProduct.setPrice(57.50);
-            myProduct.setVersion("Eclipse Neon");
+            mySoftware = new Software();
+            mySoftware.setCode(productCode);
+            mySoftware.setDescription("Build Java apps");
+            mySoftware.setPrice(57.50);
+            mySoftware.setVersion("Eclipse Neon");
+            myProduct= mySoftware;
         } else if (productCode.equalsIgnoreCase("oracle")) {
-            myProduct = new Product();
-            myProduct.setCode(productCode);
-            myProduct.setDescription("Latest MySQL");
-            myProduct.setPrice(54.50);
-            myProduct.setVersion("Oracle 3.0");
+            mySoftware = new Software();
+            mySoftware.setCode(productCode);
+            mySoftware.setDescription("Latest MySQL");
+            mySoftware.setPrice(54.50);
+            mySoftware.setVersion("Oracle 3.0");
+            myProduct= mySoftware;
         } else if (productCode.equalsIgnoreCase("java")) {
-            myProduct = new ie.atu.productv3.Book();
-            myProduct.setCode(productCode);
-            myProduct.setDescription("ATU Java Programming");
-            myProduct.setPrice(57.50);
-            myProduct.setAuthor("Joe Brown");
+            myBook = new Book();
+            myBook.setCode(productCode);
+            myBook.setDescription("ATU Java Programming");
+            myBook.setPrice(57.50);
+            myBook.setAuthor("Joe Brown");
+            myProduct= myBook;
         } else if (productCode.equalsIgnoreCase("jsp")) {
-            myProduct = new ie.atu.productv3.Book();
-            myProduct.setCode(productCode);
-            myProduct.setDescription("Java Servlets and JSP");
-            myProduct.setPrice(57.50);
-            myProduct.setAuthor("Mike White");
+            myBook = new Book();
+            myBook.setCode(productCode);
+            myBook.setDescription("Java Servlets and JSP");
+            myBook.setPrice(57.50);
+            myBook.setAuthor("Mike White");
+            myProduct= myBook;
         } else if (productCode.equalsIgnoreCase("mysql")) {
-            myProduct = new Product();
-            myProduct.setCode(productCode);
-            myProduct.setDescription("Lennon's MySQL");
-            myProduct.setPrice(54.50);
-            myProduct.setAuthor("Jim Lennon");
+            myBook = new Book();
+            myBook.setCode(productCode);
+            myBook.setDescription("Lennon's MySQL");
+            myBook.setPrice(54.50);
+            myBook.setAuthor("Jim Lennon");
+            myProduct= myBook;
         }
-    //We need all the book and software objects, but what kind of object do we return?
         return  myProduct;
     }
 }
